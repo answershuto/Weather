@@ -4,5 +4,5 @@ var app = require('../app')
 var config = require('../config/config');
 
 app.listen(config.port, function(){
-	console.log('app started,listen on port:',config.port);
+	console.log('🌎  app started,listen on port:'+config.port+'Open up http://localhost:'+config.port+'/ in your browser.');
 })
