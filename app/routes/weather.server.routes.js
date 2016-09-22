@@ -5,9 +5,8 @@ module.exports = function(app){
 		.get(function(req,res,next){
 			res.sendFile('index.html');
 		});
-	// app.route('/news/create')
-	// 	.get(WeatherController.create)
-	// 	.post(WeatherController.create);
+	app.route('/weather/rpc')
+	 	.post(WeatherController.rpcServer);
 
 	// app.route('/news/find')
 	// 	.all(WeatherController.find);
