@@ -2,12 +2,13 @@ import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as WeatherActions from '../actions/weathers'
+import Navigation from '../components/Navigation.react'
 
 class App extends Component {
   render() {
     return (
       <div>
-        Weather App
+        <Navigation />
       </div>
     )
   }
