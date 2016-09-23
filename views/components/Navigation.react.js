@@ -3,18 +3,27 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Button, Glyphicon,ButtonTo
 
 class Navigation extends Component{
 	render(){
+		const { city } = this.props;
+
 		return (
 			<div className="ui-Navigation">
-				<Navbar>
-        <Navbar.Header>
-            <Navbar.Brand>
-                <a href="#">react-bootstrap</a>
-            </Navbar.Brand>
-        </Navbar.Header>
-    </Navbar>
+				<Navbar inverse>
+			        <Navbar.Header>
+			            <Navbar.Brand>
+			            	<ButtonToolbar>
+			            		<Button bsSize="small"><Glyphicon glyph="align-justify" /></Button>
+			            	</ButtonToolbar>
+			            </Navbar.Brand>
+			            <div className="ui-head-city">{city}</div>
+			        </Navbar.Header>
+			    </Navbar>
 			</div>
 		)
 	}
+}
+
+Navigation.propTypes = {
+  city: PropTypes.string.isRequired
 }
 
 export default Navigation

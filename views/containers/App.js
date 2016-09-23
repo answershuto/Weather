@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navigation />
+        <Navigation city="杭州" />
       </div>
     )
   }
