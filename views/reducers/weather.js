@@ -1,16 +1,16 @@
-import {} from '../constants/ActionTypes'
+import * as types from '../constants/ActionTypes'
 
-const initialState = [
-  {
-    text: 'Use Redux',
-    completed: false,
-    id: 0
+const initialState = {
+    weather: 'sun'
   }
-]
 
-export default function todos(state = initialState, action) {
+export default function weather(state = initialState, action) {
+	console.log('action.type',action.type)
+	console.log('state',state)
   switch (action.type) {
-    
+    case types.WEATHER_REFRESH:
+    	return state;
+    	break;
 
     default:
       return state

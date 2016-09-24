@@ -2,13 +2,29 @@ import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as WeatherActions from '../actions/weathers'
-import Navigation from '../components/Navigation.react'
+import MainPage from '../components/MainPage.react'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  //初始化渲染后触发
+  componentDidMount() {
+    
+  }
+
+  //每次接受新的props触发
+  componentWillReceiveProps(nextProps) {
+    this.props = nextProps;
+  }
+
   render() {
+    const { refresh } = this.props.actions;
+
     return (
       <div>
-        <Navigation city="杭州" />
+        <MainPage onRefresh={refresh} />
       </div>
     )
   }
@@ -20,13 +36,14 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    //test: [{completed:false,id:0,text:"s"}]
+    weather: state.weather
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(WeatherActions, dispatch)
+  return {  
+    /*这里用bindActionCreators使用 dispatch 把每个action creator包围起来，这样可以直接调用它们。*/
+    actions: bindActionCreators(WeatherActions, dispatch) 
   }
 }
 
