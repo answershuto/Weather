@@ -22,6 +22,8 @@ module.exports = function(){
 
 	require('../app/routes/weather.server.routes')(app);
 
+	require('../app/controllers/weather.server.controller');
+
 	app.use(function(req, res, next){
 		res.status(404);
 		try{

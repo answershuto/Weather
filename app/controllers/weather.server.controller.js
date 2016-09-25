@@ -1,16 +1,12 @@
 var rpcMethon = require('./rpcMethon.server.controller');
 
-var bIsRpcInit = false;
+rpcMethon.init();
 
 module.exports = {
 	rpcServer: function(req, res, next){
-		if (true) {
-			rpcMethon.init();
-			bIsRpcInit = true;
-		};
 
 		if (req.body.method && rpcMethon[req.body.method]) {
-			rpcMethon[req.body.method](req.body.params);
+			rpcMethon[req.body.method](req, res, next);
 		}
 		else{
 			res.json({
