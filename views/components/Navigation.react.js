@@ -7,12 +7,12 @@ class Navigation extends Component{
 	}
 
 	handleClickRefresh(){
-		const { onRefresh, city } = this.props;
-		onRefresh(city);
+		const { onRefresh, cityID } = this.props;
+		onRefresh(cityID);
 	}
 
 	render(){
-		const { city } = this.props;
+		const { cityName } = this.props;
 
 		return (
 			<div className="ui-Navigation">
@@ -23,7 +23,7 @@ class Navigation extends Component{
 			            		<Button bsSize="small"><Glyphicon glyph="align-justify" /></Button>
 			            	</ButtonToolbar>
 			            </Navbar.Brand>
-			            <div className="ui-head-city">{city}</div>
+			            <div className="ui-head-city">{cityName}</div>
 			        </Navbar.Header>
 			    </Navbar>
 			    <div className="glyphicon glyphicon-refresh" onClick={this.handleClickRefresh.bind(this)}></div>

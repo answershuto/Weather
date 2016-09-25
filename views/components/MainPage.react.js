@@ -11,7 +11,7 @@ class MainPage extends Component{
 		const { onRefresh } = this.props;
 
 		return <div>
-			<Navigation onRefresh={onRefresh} city="杭州" />
+			<Navigation onRefresh={onRefresh} cityID="hangzhou" cityName="杭州" />
 			<Weather  />
 		</div>
 	}
