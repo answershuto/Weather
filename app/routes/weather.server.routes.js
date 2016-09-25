@@ -5,6 +5,8 @@ module.exports = function(app){
 		.get(function(req,res,next){
 			res.sendFile('index.html');
 		});
+
+	
 	app.route('/weather/rpc')
 	 	.post(WeatherController.rpcServer);
 
