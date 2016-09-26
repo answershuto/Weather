@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
 
-export function refresh(city = "杭州"){
+export function refresh(city = "hangzhou"){
 	var res;
 	fetch('/weather/rpc',
 		{
@@ -24,6 +24,6 @@ export function refresh(city = "杭州"){
 
 	return {
 		type: types.WEATHER_REFRESH,
-		data: res
+		params: res
 	}
 }

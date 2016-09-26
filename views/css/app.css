@@ -9,3 +9,14 @@
 	margin: 10px auto;
 	text-align: center;
 }
+
+.ui-float-right{
+	float: right;
+}
+
+.ui-Navigation-refresh{
+	float: right;
+	color: white;
+	margin-right: 20px;
+	margin-top: 20px;
+}

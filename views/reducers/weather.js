@@ -5,8 +5,7 @@ const initialState = {
   }
 
 export default function weather(state = initialState, action) {
-	console.log('action.type',action.type)
-	console.log('state',state)
+	console.log(action)
   switch (action.type) {
     case types.WEATHER_REFRESH:
     	return state;

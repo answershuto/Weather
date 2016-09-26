@@ -23,17 +23,19 @@ class Navigation extends Component{
 			            		<Button bsSize="small"><Glyphicon glyph="align-justify" /></Button>
 			            	</ButtonToolbar>
 			            </Navbar.Brand>
+			            <div className="glyphicon glyphicon-refresh ui-Navigation-refresh" onClick={this.handleClickRefresh.bind(this)}></div>
 			            <div className="ui-head-city">{cityName}</div>
+
 			        </Navbar.Header>
 			    </Navbar>
-			    <div className="glyphicon glyphicon-refresh" onClick={this.handleClickRefresh.bind(this)}></div>
 			</div>
 		)
 	}
 }
 
 Navigation.propTypes = {
-  city: PropTypes.string.isRequired
+  cityID: PropTypes.string.isRequired,
+  cityName: PropTypes.string.isRequired
 }
 
 export default Navigation

@@ -35,6 +35,8 @@ module.exports = {
 				result: false,
 				error: 'the city id is invalid'
 			})
+
+			return;
 		};
 
 		http.get("http://www.weather.com.cn/data/sk/"+id+".html", function(res2) {
