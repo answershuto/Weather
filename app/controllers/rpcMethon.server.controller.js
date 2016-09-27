@@ -46,10 +46,28 @@ module.exports = {
 		   }); 
 
 		  res2.on('end', function () {   
-		        res.json({
-		        	result: true,
-		        	params: JSON.parse(data)
-		        })
+		  		http.get("http://www.weather.com.cn/data/cityinfo/"+id+".html", function(res3) {
+				  var data2 = '';
+				  res3.on('data', function (chunk) {  
+				        data2 += chunk; 
+				   }); 
+
+				  res3.on('end', function () { 
+				  		data = JSON.parse(data);
+				  		data2 = JSON.parse(data2);
+
+				  		for(var d in data.weatherinfo){
+				  			data2.weatherinfo[d] = data.weatherinfo[d];
+				  		}
+
+				        res.json({
+				        	result: true,
+				        	params: data2
+				        })
+				   }); 
+				}).on('error', function(e) {
+				  console.log("RPC init get error: " + e.message);
+				}); 
 		   }); 
 		}).on('error', function(e) {
 		  console.log("RPC init get error: " + e.message);
