@@ -1,8 +1,14 @@
 import * as types from '../constants/ActionTypes'
 import fetch from 'isomorphic-fetch'
 
-export function refresh(city = "hangzhou"){
-	var res;
+function postRefresh(d){
+	return {
+		type: types.WEATHER_REFRESH,
+		params: d
+	}
+}
+
+export function refresh(dispatch,city = "hangzhou"){
 	fetch('/weather/rpc',
 		{
 			method:'POST',
@@ -20,10 +26,9 @@ export function refresh(city = "hangzhou"){
 		}
 	)
 	.then(response => response.json())
-  	.then(data => (res = data))
+	.then(d => dispatch(postRefresh(d)))
 
-	return {
-		type: types.WEATHER_REFRESH,
-		params: res
+  	return {
+		type: types.WEATHER_REFRESH
 	}
 }

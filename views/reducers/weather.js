@@ -9,8 +9,8 @@ export default function weather(state = initialState, action) {
   switch (action.type) {
     case types.WEATHER_REFRESH:
     	return state;
-    	break;
-
+    case types.WEATHER_REFRESH_POST:
+      return state;
     default:
       return state
   }
