@@ -21,4 +21,10 @@ class MainPage extends Component{
 	}
 }
 
+MainPage.propTypes = {
+  onRefresh: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  weather: PropTypes.object.isRequired,
+}
+
 export default MainPage

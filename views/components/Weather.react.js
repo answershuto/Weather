@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import deets from 'deets'
+import FutureWeather from '../components/FutureWeather.react'
 
 const bgImgs = {
 	'阴': 'bg1.gif',
@@ -41,13 +42,20 @@ class Weather extends Component{
 		
 
 		return <div className="ui-weather-body" style={{height:deets().size.height+'px',backgroundImage:'url(../images/'+bg+')'}}>
-			<div className="ui-weather-show" style={{paddingTop:deets().size.height/9*4+'px'}}>
+			<div className="ui-weather-show" style={{paddingTop:deets().size.height/20*11+'px'}}>
 				<div className="ui-weather-weather">{weather.weatherinfo.weather}</div>
 				<div className="ui-weather-temperature">{weather.weatherinfo.temp+'℃'}</div>
 			</div>
-			
+			<div>
+				<FutureWeather />
+				<FutureWeather />
+			</div>
 		</div>
 	}
+}
+
+Weather.propTypes = {
+  weather: PropTypes.object.isRequired,
 }
 
 export default Weather

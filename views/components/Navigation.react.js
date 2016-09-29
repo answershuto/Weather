@@ -34,7 +34,9 @@ class Navigation extends Component{
 
 Navigation.propTypes = {
   cityID: PropTypes.string.isRequired,
-  cityName: PropTypes.string.isRequired
+  cityName: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  onRefresh: PropTypes.func.isRequired,
 }
 
 export default Navigation

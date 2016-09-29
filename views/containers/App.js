@@ -37,7 +37,8 @@ class App extends Component {
 
 App.propTypes = {
   actions: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  weather: PropTypes.object.isRequired,
 }
 
 function mapStateToProps(state) {
