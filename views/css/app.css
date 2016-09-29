@@ -49,3 +49,11 @@
 .ui-weather-show{
 	margin-left: 30px;
 }
+
+.ui-FutureWeather-body{
+	float: left;
+	height: 100px;
+	filter: alpha(opacity=20);
+	background-color:rgba(255, 255, 255, 0.2);
+	border:1px solid white;
+}

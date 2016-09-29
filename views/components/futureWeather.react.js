@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import deets from 'deets'
 
 class FutureWeather extends Component{
 	constructor(props){
@@ -10,10 +11,14 @@ class FutureWeather extends Component{
 	}
 
 	render(){
-		return <div>
-
+		return <div className="ui-FutureWeather-body" style={{width:deets().size.width/2+'px'}}>
+			
 		</div>
 	}
+}
+
+FutureWeather.propTypes = {
+  	
 }
 
 export default FutureWeather

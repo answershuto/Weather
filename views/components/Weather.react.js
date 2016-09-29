@@ -42,7 +42,7 @@ class Weather extends Component{
 		
 
 		return <div className="ui-weather-body" style={{height:deets().size.height+'px',backgroundImage:'url(../images/'+bg+')'}}>
-			<div className="ui-weather-show" style={{paddingTop:deets().size.height/20*11+'px'}}>
+			<div className="ui-weather-show" style={{paddingTop:deets().size.height/2+'px'}}>
 				<div className="ui-weather-weather">{weather.weatherinfo.weather}</div>
 				<div className="ui-weather-temperature">{weather.weatherinfo.temp+'℃'}</div>
 			</div>
