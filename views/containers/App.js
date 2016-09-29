@@ -25,22 +25,25 @@ class App extends Component {
 
   render() {
     const { refresh } = this.props.actions;
+    const { weather,dispatch } = this.props;
 
     return (
       <div>
-        <MainPage onRefresh={refresh} />
+        <MainPage onRefresh={refresh} weather={weather} dispatch={dispatch} />
       </div>
     )
   }
 }
 
 App.propTypes = {
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
   return {
-    weather: state.weather
+    weather: state.weather,
+    cityID: state.cityID
   }
 }
 

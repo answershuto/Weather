@@ -7,12 +7,16 @@ class MainPage extends Component{
 		super(props);
 	}
 
-	render(){
-		const { onRefresh } = this.props;
+	componentWillReceiveProps(nextProps) {
+	    this.props = nextProps;
+	}
 
-		return <div>
-			<Navigation onRefresh={onRefresh} cityID="hangzhou" cityName="杭州" />
-			<Weather  />
+	render(){
+		const { onRefresh, weather, dispatch } = this.props;
+
+		return <div className="ui-MainPage-body">
+			<Navigation onRefresh={onRefresh} cityID="hangzhou" cityName="杭州" dispatch={dispatch} />
+			<Weather weather={weather} dispatch={dispatch} />
 		</div>
 	}
 }

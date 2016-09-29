@@ -20,3 +20,14 @@
 	margin-right: 20px;
 	margin-top: 20px;
 }
+
+.ui-weather-body{
+	width: 100%;
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+
+.ui-MainPage-body{
+	width: 100%;
+	height: 100%;
+}

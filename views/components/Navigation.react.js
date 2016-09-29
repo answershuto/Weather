@@ -7,8 +7,8 @@ class Navigation extends Component{
 	}
 
 	handleClickRefresh(){
-		const { onRefresh, cityID } = this.props;
-		onRefresh(cityID);
+		const { onRefresh, cityID, dispatch } = this.props;
+		dispatch(onRefresh(dispatch,cityID));
 	}
 
 	render(){

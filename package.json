@@ -15,6 +15,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "classnames": "^2.1.2",
+    "deets": "^1.0.1",
     "http": "0.0.0",
     "isomorphic-fetch": "^2.2.1",
     "querystring": "^0.2.0",

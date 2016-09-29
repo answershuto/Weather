@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch'
 
 function postRefresh(d){
 	return {
-		type: types.WEATHER_REFRESH,
+		type: types.WEATHER_REFRESH_POST,
 		params: d
 	}
 }
