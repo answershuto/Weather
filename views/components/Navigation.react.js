@@ -25,7 +25,6 @@ class Navigation extends Component{
 			            </Navbar.Brand>
 			            <div className="glyphicon glyphicon-refresh ui-Navigation-refresh" onClick={this.handleClickRefresh.bind(this)}></div>
 			            <div className="ui-head-city">{cityName}</div>
-
 			        </Navbar.Header>
 			    </Navbar>
 			</div>
