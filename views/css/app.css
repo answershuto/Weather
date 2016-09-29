@@ -1,5 +1,7 @@
 .ui-Navigation{
-
+	width: 100%;
+	height: 50px;
+	background-color: black;
 }
 
 .ui-head-city{
