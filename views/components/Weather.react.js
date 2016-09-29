@@ -29,9 +29,11 @@ class Weather extends Component{
 
 		console.log(weather.weatherinfo)
 
+		let info = weather.weatherinfo;
+
 		let bg = 'bg5.gif';
-		if (weather.weatherinfo.weather) {
-			let weatherText = weather.weatherinfo.weather;
+		if (info.weather) {
+			let weatherText = info.weather;
 			for(let i in bgImgs){
 				if (weatherText.indexOf(i) >= 0) {
 					bg = bgImgs[i];
@@ -39,12 +41,14 @@ class Weather extends Component{
 				};
 			}
 		};
-		
 
 		return <div className="ui-weather-body" style={{height:deets().size.height+'px',backgroundImage:'url(../images/'+bg+')'}}>
 			<div className="ui-weather-show" style={{paddingTop:deets().size.height/2+'px'}}>
-				<div className="ui-weather-weather">{weather.weatherinfo.weather}</div>
-				<div className="ui-weather-temperature">{weather.weatherinfo.temp+'℃'}</div>
+				<div className="ui-weather-weather">
+					<span>{info.weather}</span>
+					<span style={{marginLeft:'10px'}}>{info.WD+info.WS}</span>
+				</div>
+				<div className="ui-weather-temperature">{info.temp+'℃'}</div>
 			</div>
 			<div>
 				<FutureWeather />
