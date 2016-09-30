@@ -66,11 +66,46 @@ module.exports = {
 				        })
 				   }); 
 				}).on('error', function(e) {
-				  console.log("RPC init get error: " + e.message);
+				  console.log("refresh error: " + e.message);
 				}); 
 		   }); 
 		}).on('error', function(e) {
 		  console.log("RPC init get error: " + e.message);
+		}); 
+	},
+
+	futureWeather: function(req,res,next){
+		var id = 0;
+		for(var c=0;c<szCity.length;c++){
+			if (szCity[c]['$'].d3 == req.body.params.city) {
+				id = szCity[c]['$'].d1;
+			};
+		}
+		
+		if (id === 0) {/*city id 无效*/
+			res.json({
+				result: false,
+				error: 'the city id is invalid'
+			})
+			return;
+		};
+
+		http.get("http://mobile.weather.com.cn/data/forecast/101010100.html?_="+id, function(res) {
+		  var data = '';
+		  res.on('data', function (chunk) {  
+		        data += chunk; 
+		   }); 
+
+		  res.on('end', function () {   
+		       res.json({
+		        	result: true,
+		        	params: {
+		        		futureWeather: data
+		        	}
+		        })
+		   }); 
+		}).on('error', function(e) {
+		  	console.log("futureWeather error: " + e.message);
 		}); 
 	}
 }
