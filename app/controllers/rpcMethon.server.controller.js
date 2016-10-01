@@ -90,13 +90,13 @@ module.exports = {
 			return;
 		};
 
-		http.get("http://mobile.weather.com.cn/data/forecast/101010100.html?_="+id, function(res) {
+		http.get("http://mobile.weather.com.cn/data/forecast/101010100.html?_="+id, function(res2) {
 		  var data = '';
-		  res.on('data', function (chunk) {  
+		  res2.on('data', function (chunk) {  
 		        data += chunk; 
 		   }); 
 
-		  res.on('end', function () {   
+		  res2.on('end', function () {   
 		       res.json({
 		        	result: true,
 		        	params: {
