@@ -90,7 +90,7 @@ module.exports = {
 			return;
 		};
 
-		http.get("http://mobile.weather.com.cn/data/forecast/101010100.html?_="+id, function(res2) {
+		http.get("http://mobile.weather.com.cn/data/forecast/"+id+".html", function(res2) {
 		  var data = '';
 		  res2.on('data', function (chunk) {  
 		        data += chunk; 
