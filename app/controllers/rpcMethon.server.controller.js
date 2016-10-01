@@ -100,7 +100,7 @@ module.exports = {
 		       res.json({
 		        	result: true,
 		        	params: {
-		        		futureWeather: data
+		        		futureWeather: JSON.parse(data)
 		        	}
 		        })
 		   }); 
