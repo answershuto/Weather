@@ -56,4 +56,14 @@
 	filter: alpha(opacity=20);
 	background-color:rgba(255, 255, 255, 0.2);
 	border:1px solid white;
+	color: white;
+}
+
+.ui-FutureWeather-body div{
+	margin-top: 7px;
+	margin-left: 7px;
+}
+
+.ui-FutureWeather-templete{
+	margin-left: 30px;
 }
