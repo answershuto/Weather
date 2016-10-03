@@ -86,16 +86,24 @@ class Weather extends Component{
 			console.log(weather.futureWeather.f.f1)
 			let info = weather.futureWeather.f.f1;
 
-			ctx.strokeStyle = "rgba(255,255,255,1)"
+			ctx.strokeStyle = "rgba(255,255,255,1)";
+			ctx.fillStyle = "#FFFFFF";
 		    ctx.lineWidth = 3;//线宽
-			for(let i=0;i<info.length;i++){
+		    const width = 300;
+		    const height = 150;
+			for(let i=0;i<6;i++){
+				let w = i * 50 + 30;
+				let h = Number(info[i].fc)*height/40;
 				if (i === 0) {
-					ctx.moveTo(i * 30, Number(info[i].fc));
+					ctx.moveTo(w, h);
 				}
 				else{
-					ctx.lineTo(i * 30, Number(info[i].fc));
+					ctx.lineTo(w, h);
 				}
+				ctx.fillRect(w-3,h-3,6,12);
+				ctx.strokeRect(w-3,h-3,6,12);
 			}
+
 		  	ctx.stroke();//画线
 		};
 	}
