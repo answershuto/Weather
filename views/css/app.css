@@ -67,3 +67,8 @@
 .ui-FutureWeather-templete{
 	margin-left: 30px;
 }
+
+.ui-weather-canvas{
+	height: 100px;
+	width: 100%;
+}
