@@ -86,9 +86,9 @@ class Weather extends Component{
 			console.log(weather.futureWeather.f.f1)
 			let info = weather.futureWeather.f.f1;
 
-			ctx.strokeStyle = "rgba(255,255,255,1)";
+			ctx.strokeStyle = "#FFFFFF";
 			ctx.fillStyle = "#FFFFFF";
-		    ctx.lineWidth = 3;//线宽
+		    
 		    const width = 300;
 		    const height = 150;
 			for(let i=0;i<6;i++){
@@ -100,11 +100,20 @@ class Weather extends Component{
 				else{
 					ctx.lineTo(w, h);
 				}
+				//画线
+				ctx.lineWidth = 3;//线宽
+				ctx.stroke();
+
+				/*折线点*/
 				ctx.fillRect(w-3,h-3,6,12);
 				ctx.strokeRect(w-3,h-3,6,12);
+
+				/*文字*/
+				ctx.lineWidth = 1;//线宽
+				ctx.strokeText(info[i].fc+'℃',w-10,h-10);
 			}
 
-		  	ctx.stroke();//画线
+		  	
 		};
 	}
 }
