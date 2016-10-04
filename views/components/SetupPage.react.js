@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import deets from 'deets'
 
 class SetupPage extends Component{
 	constructor(props){
@@ -10,11 +11,18 @@ class SetupPage extends Component{
 	}
 
 	render(){
-		const {  } = this.props;
 
-		return <div>
+		return <div style={{width:deets().size.width*5/5,height:deets().size.height}}>
 			
 		</div>
+	}
+
+	componentDidMount(){
+
+	}
+
+	componentDidUpdate(){
+
 	}
 }
 

@@ -27,11 +27,18 @@ class App extends Component {
   render() {
     const { refresh,Setup } = this.props.actions;
     const { weather,dispatch } = this.props;
-console.log(weather.isSetup)
+
+    let show;
+    if (!weather.isSetup) {
+      show = <MainPage onRefresh={refresh} onSetup={Setup} weather={weather} dispatch={dispatch} />
+    }
+    else{
+      show = <SetupPage isSetup={weather.isSetup} />;
+    }
+
     return (
       <div>
-        <MainPage onRefresh={refresh} onSetup={Setup} weather={weather} dispatch={dispatch} />
-        <SetupPage />
+          {show}
       </div>
     )
   }

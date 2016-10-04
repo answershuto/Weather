@@ -59,7 +59,31 @@ export function refresh(dispatch,city = "hangzhou"){
 	}
 }
 
+function postSetup(d){
+	return {
+		type: types.WEATHER_SETUP_POST,
+		params: d
+	}
+}
+
 export function Setup(dispatch,city = "hangzhou"){
+	fetch('/weather/rpc',
+		{
+			method:'POST',
+			headers:{ 
+			 			'Accept': 'application/json', 
+			 			'Content-Type': 'application/json'
+			 		},
+			redentials: 'include',
+			body: JSON.stringify({
+									method: 'getCitys',
+									params: null
+								})
+		}
+	)
+	.then(response => response.json())
+	.then(d => dispatch(postFutureWeather(d)))
+
 	return {
 		type: types.WEATHER_SETUP
 	}

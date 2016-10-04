@@ -41,6 +41,12 @@ export default function weather(state = initialState, action) {
                         cityID: state.cityID,
                         isSetup: !state.isSetup
                     };
+        case types.WEATHER_SETUP_POST:
+        console.log(action)
+            return {
+                        cityID: state.cityID,
+                        isSetup: state.isSetup
+                    }
         default:
             return state
     }
