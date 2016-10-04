@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as WeatherActions from '../actions/weathers'
 import MainPage from '../components/MainPage.react'
+import SetupPage from '../components/SetupPage.react'
 
 
 class App extends Component {
@@ -24,12 +25,13 @@ class App extends Component {
   }
 
   render() {
-    const { refresh } = this.props.actions;
+    const { refresh,Setup } = this.props.actions;
     const { weather,dispatch } = this.props;
-
+console.log(weather.isSetup)
     return (
       <div>
-        <MainPage onRefresh={refresh} weather={weather} dispatch={dispatch} />
+        <MainPage onRefresh={refresh} onSetup={Setup} weather={weather} dispatch={dispatch} />
+        <SetupPage />
       </div>
     )
   }
@@ -44,7 +46,7 @@ App.propTypes = {
 function mapStateToProps(state) {
   return {
     weather: state.weather,
-    cityID: state.cityID
+    cityID: state.cityID,
   }
 }
 

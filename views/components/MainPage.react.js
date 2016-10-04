@@ -12,10 +12,10 @@ class MainPage extends Component{
 	}
 
 	render(){
-		const { onRefresh, weather, dispatch } = this.props;
+		const { onRefresh, weather, dispatch,onSetup } = this.props;
 
 		return <div className="ui-MainPage-body">
-			<Navigation onRefresh={onRefresh} cityID="hangzhou" cityName="杭州" dispatch={dispatch} />
+			<Navigation onRefresh={onRefresh} onSetup={onSetup} cityID="hangzhou" cityName="杭州" dispatch={dispatch} />
 			<Weather weather={weather} dispatch={dispatch} />
 		</div>
 	}

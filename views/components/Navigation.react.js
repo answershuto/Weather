@@ -11,6 +11,11 @@ class Navigation extends Component{
 		dispatch(onRefresh(dispatch,cityID));
 	}
 
+	handeClickSetup(){
+		const { onSetup, cityID, dispatch } = this.props;
+		dispatch(onSetup(dispatch,cityID));
+	}
+
 	render(){
 		const { cityName } = this.props;
 
@@ -20,7 +25,7 @@ class Navigation extends Component{
 			        <Navbar.Header>
 			            <Navbar.Brand>
 			            	<ButtonToolbar>
-			            		<Button bsSize="small"><Glyphicon glyph="align-justify" /></Button>
+			            		<Button onClick={this.handeClickSetup.bind(this)} bsSize="small"><Glyphicon glyph="align-justify" /></Button>
 			            	</ButtonToolbar>
 			            </Navbar.Brand>
 			            <div className="glyphicon glyphicon-refresh ui-Navigation-refresh" onClick={this.handleClickRefresh.bind(this)}></div>

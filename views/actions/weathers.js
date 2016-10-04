@@ -58,3 +58,9 @@ export function refresh(dispatch,city = "hangzhou"){
 		type: types.WEATHER_REFRESH
 	}
 }
+
+export function Setup(dispatch,city = "hangzhou"){
+	return {
+		type: types.WEATHER_SETUP
+	}
+}
