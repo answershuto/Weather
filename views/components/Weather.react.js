@@ -199,7 +199,7 @@ class Weather extends Component{
 
 				/*文字*/
 				ctx.lineWidth = 1;//线宽
-				ctx.strokeText(info[i].fc+'℃',w-10,h-10);
+				ctx.strokeText(info[i].fd+'℃',w-10,h-10);
 			}
 
 			for(let i=0;i<6;i++){
