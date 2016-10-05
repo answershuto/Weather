@@ -12,7 +12,7 @@ function stopDefault(e){
 class SetupPage extends Component{
 	constructor(props){
 		super(props);
-		this.state = {searchValue: "",resCitys: []};
+		this.state = {searchValue: "杭",resCitys: []};
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -40,14 +40,22 @@ class SetupPage extends Component{
 	}
 
 	render(){
-		this.state.searchValue
+		let szRes = [];
+
+		for(let i=0;i<this.state.resCitys.length;i++){
+			console.log(this.state.resCitys[i])
+			szRes.push(<span key={i}>{this.state.resCitys[i].d2}</span>)
+		}
+		
 
 		return <div style={{width:deets().size.width*5/5,height:deets().size.height}}>
 			<div>
 				<form onSubmit={this.handlesubmit.bind(this)} method="post" action="/">
 					<input className="form-control input-sm" type="search" placeholder="搜索🔍" value={this.state.searchValue} onChange={this.handleChangeSearch.bind(this)}></input>
 				</form>
-				<div></div>
+				<div>
+					{szRes}
+				</div>
 			</div>
 		</div>
 	}
