@@ -107,5 +107,12 @@ module.exports = {
 		}).on('error', function(e) {
 		  	console.log("futureWeather error: " + e.message);
 		}); 
+	},
+
+	getCitys: function(req,res,next){
+		res.json({
+			result: true,
+			params: szCity
+		});
 	}
 }
