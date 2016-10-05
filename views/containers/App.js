@@ -5,7 +5,6 @@ import * as WeatherActions from '../actions/weathers'
 import MainPage from '../components/MainPage.react'
 import SetupPage from '../components/SetupPage.react'
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +32,7 @@ class App extends Component {
       show = <MainPage onRefresh={refresh} onSetup={Setup} weather={weather} dispatch={dispatch} />
     }
     else{
-      show = <SetupPage isSetup={weather.isSetup} />;
+      show = <SetupPage isSetup={weather.isSetup} citys={weather.citys} />;
     }
 
     return (

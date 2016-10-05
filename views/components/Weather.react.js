@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import deets from 'deets'
 import FutureWeather from '../components/FutureWeather.react'
-var update = require('react-addons-update');
+import update from 'react-addons-update'
 
 const bgImgs = {
 	'阴': 'bg1.gif',

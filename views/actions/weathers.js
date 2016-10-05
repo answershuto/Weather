@@ -82,7 +82,7 @@ export function Setup(dispatch,city = "hangzhou"){
 		}
 	)
 	.then(response => response.json())
-	.then(d => dispatch(postFutureWeather(d)))
+	.then(d => dispatch(postSetup(d)))
 
 	return {
 		type: types.WEATHER_SETUP
