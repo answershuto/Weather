@@ -29,7 +29,7 @@ class App extends Component {
 
     let show;
     if (!weather.isSetup) {
-      show = <MainPage onRefresh={refresh} onSetup={Setup} weather={weather} dispatch={dispatch} />
+      show = <MainPage onRefresh={refresh} cityInfo={{id:weather.cityID,name:weather.cityName}} onSetup={Setup} weather={weather} dispatch={dispatch} />
     }
     else{
       show = <SetupPage isSetup={weather.isSetup} citys={weather.citys} refresh={refresh} setCity={setCity} dispatch={dispatch} />;
@@ -52,7 +52,6 @@ App.propTypes = {
 function mapStateToProps(state) {
   return {
     weather: state.weather,
-    cityID: state.cityID,
   }
 }
 
