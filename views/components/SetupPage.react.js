@@ -13,7 +13,7 @@ function stopDefault(e){
 class SetupPage extends Component{
 	constructor(props){
 		super(props);
-		this.state = {searchValue: "杭",resCitys: []};
+		this.state = {searchValue: "",resCitys: []};
 	}
 
 	componentWillReceiveProps(nextProps) {
