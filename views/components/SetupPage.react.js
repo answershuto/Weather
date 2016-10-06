@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import deets from 'deets'
 import update from 'react-addons-update'
+import { Button } from 'react-bootstrap';
 
 function stopDefault(e){
   if ( e && e.preventDefault ) 
@@ -44,7 +45,7 @@ class SetupPage extends Component{
 
 		for(let i=0;i<this.state.resCitys.length;i++){
 			console.log(this.state.resCitys[i])
-			szRes.push(<span key={i}>{this.state.resCitys[i].d2}</span>)
+			szRes.push(<Button className="ui-setup-searchRes" key={i}>{this.state.resCitys[i].d2}</Button>)
 		}
 		
 
@@ -53,7 +54,7 @@ class SetupPage extends Component{
 				<form onSubmit={this.handlesubmit.bind(this)} method="post" action="/">
 					<input className="form-control input-sm" type="search" placeholder="搜索🔍" value={this.state.searchValue} onChange={this.handleChangeSearch.bind(this)}></input>
 				</form>
-				<div>
+				<div className="ui-setup-searchDiv">
 					{szRes}
 				</div>
 			</div>

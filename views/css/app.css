@@ -73,6 +73,15 @@
 	width: 100%;
 }
 
+.ui-setup-searchDiv{
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 .ui-setup-searchRes{
-	
+	cursor: pointer;
+	border:1px ridge black;
+	margin-left: 15px;
+	margin-top: 20px;
 }
