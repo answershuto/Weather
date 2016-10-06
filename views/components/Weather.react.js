@@ -100,10 +100,10 @@ class Weather extends Component{
 	render(){
 		const { weather } = this.state;
 
-		let info = weather.weatherinfo;
+		let info = weather.weatherinfo || {};
 
 		let bg = 'bg5.gif';
-		if (info.weather) {
+		if (info && info.weather) {
 			let weatherText = info.weather;
 			for(let i in bgImgs){
 				if (weatherText.indexOf(i) >= 0) {
@@ -146,7 +146,7 @@ class Weather extends Component{
 		}
 		else{
 			const text = ['明天','后天'];
-			if (weather.futureWeather.f) {
+			if (weather.futureWeather && weather.futureWeather.f) {
 				for(let i=0;i<2;i++){
 					FutureWeathers.push(<FutureWeather key={i} info={weather.futureWeather.f.f1[i]} text={text[i]} />)
 				}

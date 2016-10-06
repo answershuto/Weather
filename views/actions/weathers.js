@@ -88,3 +88,10 @@ export function Setup(dispatch,city = "hangzhou"){
 		type: types.WEATHER_SETUP
 	}
 }
+
+export function setCity(cityInfo){
+	return {
+		type: types.WEATHER_SET_CITY,
+		cityInfo,
+	}
+}

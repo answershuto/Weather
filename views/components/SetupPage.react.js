@@ -40,12 +40,18 @@ class SetupPage extends Component{
 		this.setState(update(this.state,{searchValue:{$set: e.target.value}}));
 	}
 
+	handleClickCitys(e){
+		const {setCity,dispatch,refresh} = this.props;
+		
+		dispatch(setCity({id:e.target.attributes['data-cityid'].value,name:e.target.innerHTML}))
+		dispatch(refresh(dispatch,e.target.attributes['data-cityid'].value))
+	}
+
 	render(){
 		let szRes = [];
 
 		for(let i=0;i<this.state.resCitys.length;i++){
-			console.log(this.state.resCitys[i])
-			szRes.push(<Button className="ui-setup-searchRes" key={i}>{this.state.resCitys[i].d2}</Button>)
+			szRes.push(<Button className="ui-setup-searchRes" onClick={this.handleClickCitys.bind(this)} key={i} data-cityid={this.state.resCitys[i].d3}>{this.state.resCitys[i].d2}</Button>)
 		}
 		
 

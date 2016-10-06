@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   render() {
-    const { refresh,Setup } = this.props.actions;
+    const { refresh,Setup,setCity } = this.props.actions;
     const { weather,dispatch } = this.props;
 
     let show;
@@ -32,7 +32,7 @@ class App extends Component {
       show = <MainPage onRefresh={refresh} onSetup={Setup} weather={weather} dispatch={dispatch} />
     }
     else{
-      show = <SetupPage isSetup={weather.isSetup} citys={weather.citys} />;
+      show = <SetupPage isSetup={weather.isSetup} citys={weather.citys} refresh={refresh} setCity={setCity} dispatch={dispatch} />;
     }
 
     return (
